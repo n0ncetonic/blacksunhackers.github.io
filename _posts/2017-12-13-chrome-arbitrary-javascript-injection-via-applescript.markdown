@@ -5,7 +5,7 @@ title: Chrome Arbitrary Javascript Injection Via AppleScript
 ---
 
 ## Foreword ##
-I've had a PoC for this technique for a little while as part of research for a future talk on the subject of post-exploitation in MacOS but as an article has surfaced detailing the admware OSX.Pirrit's use of this technique, I thought it appropriate to disclose this writeup. It should be noted that while this particular PoC targets only Google Chrome, the attack works against Safari as well. Mozilla Firefox is exempt from this specific attack as they do not expose a similar scripting definition to AppleScript.
+I've had a PoC for this technique for a little while as part of research for a future talk on the subject of post-exploitation in MacOS, but as an article has surfaced [detailing the adware OSX.Pirrit][4]'s use of this technique, I thought it appropriate to disclose this writeup. It should be noted that while this particular PoC targets only Google Chrome, the attack works against Safari as well. Mozilla Firefox is exempt from this specific attack as they do not expose a similar scripting definition to AppleScript.
 
 ## Browser hijacks are hard, let's go shopping ##
 Wouldn't it be nice to inject arbitrary Javascript into a user's browser regardless of XSS detection, website, or hoping a user is foolish enough to visit a BeEF link? 
@@ -50,8 +50,11 @@ RTFM
 ## Closing ##
 While I'm sad that I wasn't the first one to weaponize this technique publicly I hope that this public release of a fairly harmless PoC will spark discussion around writing more creative payloads and help excite malware authors and security researchers to take more time to look at MacOS and develop more post-exploitation techniques.
 
+I leave implementation of this PoC in Safari as an exercise for the reader.
+
 RIP Trevor; another fun bug squashed in public.
 
 [1]:https://chromium.googlesource.com/chromium/src.git/+/master/chrome/browser/ui/cocoa/applescript/scripting.sdef
 [2]:https://chromium.googlesource.com/chromium/src.git/+/master/chrome/browser/ui/cocoa/applescript/examples/execute_javascript.applescript
 [3]:http://jsbeautifier.org/
+[4]:https://www.cybereason.com/blog/targetingedge-mac-os-x-pirrit-malware-adware-still-active
